@@ -66,11 +66,6 @@ public class Controlador1 {
         return ciudad.toString() + " añadida";
     }
 
-    @GetMapping("/controlador1/getciudad")
-    public String getCiudades(){
-        return ciudades.toString();
-    }
-
     @GetMapping("/controlador1/bean/{bean}")
     public String getPersonaBean(@PathVariable String bean){
         switch(bean){
