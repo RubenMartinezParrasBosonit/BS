@@ -1,12 +1,19 @@
 package com.example.demoSpringBootRuben;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("PersonaServiceImp")
 public class PersonaServiceImp implements  PersonaService{
 
     Persona persona = new Persona();
+
+    public void createPersona(Persona persona){
+        this.persona.setNombre(persona.getNombre());
+        this.persona.setEdad(persona.getEdad());
+        this.persona.setCiudad(persona.getCiudad());
+    }
 
     public String getNombre(){
         return persona.getNombre();
